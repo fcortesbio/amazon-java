@@ -44,10 +44,12 @@ This professional certificate is a collaboration between Amazon and Coursera des
 - **The Developer Role**: You will begin by exploring the day-to-day responsibilities of a software developer and learn about the Software Development Life Cycle (SDLC), which is the framework for planning, building, and maintaining software
 
 - **Java Fundamentals**: The course covers the basic building blocks of programming, including:
+
   - **Variables, Data Types, and Operators** for handling data
   - **Strings and Arrays** for manipulating text
 
 - **Control Flow**: You will learn how to make your programs dynamic and intelligent using:
+
   - **Conditional Statements** (`if`, `else`, `switch`) to make decisions based on different scenarios
   - **Loops** (`for`, `while`) to automate repetitive tasks efficiently
 
@@ -392,7 +394,7 @@ _Knowledge check completed - no additional documentation needed._
 
 ## **1.2. Java basics: Variables and operators**
 
-### Introduction to Java, features and applications
+### 1.2.1. Introduction to Java, features and applications
 
 Java is an in-demand, versatile programming language and computing platform released in 1995. It is essential to many everyday technologies, powering billions of devices like mobile phones, laptops, and computers -outnumbering the global population.
 
@@ -415,7 +417,7 @@ Java is used across many different fields to build:
 
 - **Desktop Applications**: Programs and games, such as Minecraft and Eclipse.
 
-### Introduction to variables and data Types
+### 1.2.2. Introduction to variables and data Types
 
 #### Understanding Variables in Java: From Concept to Code
 
@@ -476,6 +478,7 @@ String username;
 playerScore = 150;
 username = "AdaLovelace";
 ```
+
 #### The Best Practice: Declaring and Initializing Together
 
 For convenience, clarity, and safety, Java allows you to combine declaration and initialization into a single, efficient line. This is the most common and recommended way to create variables, as it ensures the variable has a known, valid value from the moment it is created.
@@ -494,9 +497,204 @@ boolean isGameOver = false;
 
 By understanding this simple two-step process, you've mastered the fundamental concept of variables. **Declaration** creates the labeled slot, and **initialization** fills it. Every piece of data your program uses will be stored in a variable, giving your code the organization it needs to run complex tasks.
 
-### Explore the different types of Operators in Java
+### **1.2.3. Explore the different types of Operators in Java**
 
-### Activity: Practice declaring and initializing variables
+#### Arithmetic Operators
+
+These operators are used for basic mathematical operations.
+
+- Addition (`+`): Adds numbers (e.g., `5 + 7` results in 1`2`).
+
+- Subtraction (`-`): Subtracts numbers (e.g., `95 - 7` results in `88`).
+
+- Concatenation: The addition operator (`+`) is also used to combine (_concatenate_) strings. For example, `"Tom" + "Harry"` results in `"TomHarry"`.
+
+#### Relational Operators
+
+Also known as comparative operators, these are used to compare two values, and the result is always a Boolean (`true` or `false`).
+
+- **Greater than (`>`):** Checks if one value is larger than another (e.g., `95 > 85` results in `true`).
+
+- **Less than (`<`):** Checks if one value is smaller than another (e.g., `95 < 85` results in `false`).
+
+#### Logical Operators
+
+These operators are used to combine multiple Boolean conditions to make complex decisions.
+
+- **AND (`&&`)**: Returns `true` only if the conditions on _both_ sides are `true`. It's used when multiple criteria must be met (e.g., `player1Score > player2Score && player1Score > player3Score`).
+
+- **OR (`||`)**: Returns `true` if at least one of the conditions is `true`. It results in `false` only if _both_ sides are `false` (e.g., checking if a user `isAdmin || hasPremiumMembership`).
+
+- **NOT (`!`):** Inverts a Boolean value, turning `true` into `false` and `false` into `true` (e.g., `!isAuthenticated`).
+
+### **1.2.4. Activity: Practice declaring and initializing variables**
+
+#### Instructions
+
+Follow these steps in the interactive code block:
+
+1. Review the code (see if you can make sense of each line).
+
+2. Select Run to view the output.
+
+3. Explore the output.
+
+```Java
+public class CarInfo {
+   public static void main(String[] args) {
+       // Declare and initialize a String variable for the car's make
+       String make = "Ford";
+
+       // Declare and initialize a String variable for the car's model
+       String model = "Mustang";
+
+       // Declare and initialize an integer variable for the car's year
+       int year = 2022;
+
+       // Declare and initialize a double variable for the car's mileage
+       double mileage = 15002.5;
+
+       // Declare and initialize a boolean variable for automatic transmission
+       boolean isAutomatic = true;
+
+       // Print the values of the variables
+       // the text you want to print is inside the “ “, the value
+       //you want to display is inside the variable + variable name
+       System.out.println("Car Make: " + make);
+       System.out.println("Car Model: " + model);
+       System.out.println("Car Year: " + year);
+       System.out.println("Car Mileage: " + mileage + " miles");
+       System.out.println("Is the car automatic: " + isAutomatic);
+   }
+}
+```
+
+#### Challenge: Declare and initialize variables from a given sample
+
+Now it’s time to put your newly learned skills into practice by declaring and initializing variables!
+
+Imagine that you are keeping track of information about your favorite novelist to monitor what you’ve read and what you still want to read. You will need to declare and initialize appropriate variables to store information about the book, such as title, number of pages, and price.
+
+**Requirements**
+Complete the steps in the interactive code block. Delete the **TODO** comment and replace it with your code to declare and initialize five variables according to the requirements. Make sure you use logical variable names that meet the best practices discussed earlier. Remember, you can declare and initialize a variable in one line. If you feel unsure about this, revisit the video
+Introduction to variables and data types.
+
+1. Variable 1: Every book has a title, what kind of variable is best suited to store this?
+
+2. Variable 2: Books are written by people. You want to store the writer's name, what variable will you use?
+
+3. Variable 3: There are a certain number of pages in a book, and they are all full pages. No book has half a page, right? What type of variable would you use to store this page value?
+
+4. Variable 4: Books cost money, and you need to keep track of how much. Prices are funny; sometimes, they are just a little less than a whole number, like 19.99. What type of variable would you select to store the price?
+
+5. Remember to assign values to your variables, and then you can write a print statement to display your book to the world!
+
+6. Print the line using System.out.println().
+
+7. Select Run to view the output.
+
+8. Explore the output.
+
+Exercise completed at [./FavoriteBook.java]
+
+### **1.2.5. Activity: Using variables and operators**
+
+#### Instructions
+
+Follow these steps in the interactive code block:
+
+1. Run the code block.
+
+2. Examine the output.
+
+```Java
+// Add numbers using += assignment operator
+public class AssignmentOperators {
+    public static void main(String args[]) {
+
+        int itemsAvailable = 7;
+
+        System.out.println("Current available items : " + itemsAvailable);
+
+        // Adding 10 more items
+        itemsAvailable += 10;
+
+        System.out.println("Total available items after adding: " + itemsAvailable);
+
+    }
+}
+```
+
+Now, suppose that a customer has come along and purchased 9 books. What operators would you use now? Let’s explore this scenario in the following code block.
+
+Instructions
+
+Follow these steps in the interactive code block:
+
+1. Run the code block.
+
+2. Examine the output.
+
+```Java
+// Subtracting numbers using -= assignment operator
+public class AssignmentOperators {
+    public static void main(String args[]) {
+
+        int itemsAvailable = 17;
+        System.out.println("Current available items : " + itemsAvailable);
+        // Subtracting 9 items
+        itemsAvailable -= 9;
+        System.out.println("Total available items after subtracting: " + itemsAvailable);
+    }
+
+}
+```
+
+#### Challenge: Use multiplication and division operators
+
+Now it’s time to experiment with different operators to enhance your coding skills! You have already used the addition and subtraction operators to assign values to variables. Now, you will write the code to explore multiplication `*=` and division `/=`.
+
+Imagine you and your friends have decided to go on a trip to Europe. Because you live in America, US Dollars (USD) will not be a valid currency for European transactions, so you will have to convert them to Euros (EUR).
+
+You have the following data:
+
+- Amount in **USD = 100**
+
+- Exchange rate of **1 USD = 0.85 EUR**
+
+- Expenditure = **55 EUR**
+
+- After expenditure = **45 EUR**
+
+**Requirements**
+Complete these steps in the interactive code block:
+
+1. Declare and initialize two double variables as below:
+
+   - double amountInUSD = 100.0
+   - double exchangeRateUSDToEUR = 0.85; (1 USD = 0.85 EUR)
+
+2. Print the initial amount in USD, i.e., 100.0 USD.
+
+3. Perform the operation: amountInUSD \*= exchangeRateUSDToEUR
+
+4. Print the amount in EUR after conversion, i.e., 85 EUR.
+
+5. Deduct 55 EUR as the stated expenditure and print the balance, i.e., 30 EUR.
+
+6. Convert the remaining 30 EUR to USD.
+
+7. Print the amount in USD after converting it back to USD from EUR.
+
+```java
+public class CurrencyConversion {
+    public static void main(String args[]) {
+
+       // TODO  your code here
+
+    }
+}
+```
 
 ### Knowledge check: Java basics: Variables and operators
 
