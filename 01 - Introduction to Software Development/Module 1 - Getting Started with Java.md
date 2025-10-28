@@ -44,12 +44,10 @@ This professional certificate is a collaboration between Amazon and Coursera des
 - **The Developer Role**: You will begin by exploring the day-to-day responsibilities of a software developer and learn about the Software Development Life Cycle (SDLC), which is the framework for planning, building, and maintaining software
 
 - **Java Fundamentals**: The course covers the basic building blocks of programming, including:
-
   - **Variables, Data Types, and Operators** for handling data
   - **Strings and Arrays** for manipulating text
 
 - **Control Flow**: You will learn how to make your programs dynamic and intelligent using:
-
   - **Conditional Statements** (`if`, `else`, `switch`) to make decisions based on different scenarios
   - **Loops** (`for`, `while`) to automate repetitive tasks efficiently
 
@@ -670,7 +668,6 @@ You have the following data:
 Complete these steps in the interactive code block:
 
 1. Declare and initialize two double variables as below:
-
    - double amountInUSD = 100.0
    - double exchangeRateUSDToEUR = 0.85; (1 USD = 0.85 EUR)
 
@@ -696,9 +693,58 @@ public class CurrencyConversion {
 }
 ```
 
-### Knowledge check: Java basics: Variables and operators
+Completed at `./CurrencyConversion.java`
 
-### Quick reference: Java data types and operators
+### **1.2.6. Knowledge check: Java basics: Variables and operators**
+
+_Knowledge check completed - no additional documentation needed._
+
+### **1.2.7. Quick reference: Java data types and operators**
+
+#### Commonly used data types and operators in Java
+
+For anyone diving into Java, two of the most fundamental concepts to grasp are **data types** and **operators**. These are the essential blocks for virtually every line of code you'll write. Understanding them isn't just about syntax; it's about writing code that is both efficient and correct.
+
+#### 1. Java's Data types: The 'What'
+
+In Java, every variable has a data type, which tells the compiler how much memory to allocate and what kind of data it can hold. Efficiently managing memory is key to a well-performing application.
+
+Java provides a set of **primitive data types**, each with a specific size:
+
+- **Integer Types:** Used for whole numbers. You have options based on the size of the number you need to store, from the memory-saving `byte` (8 bits) and `short` (16 bits) to the most common `int` (32 bits) and the massive `long` (64 bits).
+
+- **Floating-Point Types:** Used for decimal numbers. `float` (32-bit) is useful for saving memory in large arrays, but `double` (64-bit) is the default and provides greater precision.
+
+- **Other Primitives:** `char` (16-bit) stores a single character, and `boolean` (1-bit) holds a simple `true` or `false` value.
+
+- **The String:** While not a primitive (it's an object), the String type is universally used for storing sequences of text.
+
+| Note: In Java, characters are enclosed with single quotes, while strings are enclosed with double quotes.
+
+```Java
+String name = "Kenya";
+char initial = 'K';
+```
+
+#### 2. Java's Operators: The 'How'
+
+If data types are the nouns of the language, operators are the verbs. They are special symbols that perform operations on your variables and values. Using the correct operator is critical for getting the results you expect.
+
+Java's operators can be grouped as follows:
+
+- **Arithmetic Operators:** These perform basic math: `+` (add), `-` (subtract), `*` (multiply), `/` (divide), and `%` (modulus/remainder).
+
+- **Assignment Operators**: Used to assign values. Beyond the basic `=` (assign), you have compound operators like `+=` (add and assign) and `-=` (subtract and assign) that create more concise code.
+
+- **Unary operators:** These act on a single operand. The most common are `++` (increment) and `--` (decrement), which add or subtract one (`1`) from a variable.
+
+- **Relational operators:** These compare two values and return a boolean (`true`/`false`) result. They include `==` (equal to), `!=` (not equal to), `>` (greater than), `<` (less than), `<=` (less than or equal to) and `>=` (greater than or equal to).
+
+- **Logical Operators:** Used to combine multiple boolean expressions. The main ones are `&&` (logical AND) and `||` (logical OR).
+
+#### Takeaways:
+
+Mastering Java's datatypes and operators is non-negotiable. A wise choice of datatype leads to efficient, performant applications. A correct choice of operators ensures your program's logic is sound and your results accurate.
 
 ---
 
@@ -706,7 +752,42 @@ public class CurrencyConversion {
 
 ## **1.3.Strings: Working with text in Java**
 
-### Handling text with Java
+### **1.3.1. Handling text with Java**
+
+_10/28/2025_
+String manipulation consist of performing operations on a string to **transform** it. This is often done to ensure the text meets certain rules (like formatting), making it more **readable** for users, or **prepare** it for subsequent operations.
+
+#### Arrays
+
+We previously defined some of the primitive datatypes in Java but haven't had the chance to talk about holding multiple values. While this topic will be discussed further in later sections, it's worth introducing the concept of Arrays, as it's key to **understanding** how Strings are implemented in Java and other programming languages.
+
+An **Array** is a specific type of **object** that holds a fixed number of values of the **same type**. All elements are arranged in a specific, indexed order (starting from index 0). Arrays are built into the Java runtime. Using an array allows efficient access to any element by querying its index, instead of needing a separate variable for each element.
+
+#### What is a String in Java?
+
+A **string** is an object that represents a sequence of characters. (Characters include letters, numbers, symbols, and spaces).
+
+Internally, the Java `String` class is backed by an array of the `char` datatype.
+
+Strings are used to store and manipulate text in Java programs. Common use cases include:
+- displaying messages
+- taking user inputs
+- processing text data
+
+To create a string in Java, you put double quotes around the text:
+
+```Java
+String phrase = "Java is amazing";
+String greeting = "Hello, Java!";
+String name = "Nathalia";
+```
+
+#### Strings are Immutable
+A core concept in Java is that Strings are **immutable**. This means that once a String **object** is created in memory, its value (the sequence of characters it holds) cannot be changed.
+
+Down the line, we'll explore some methods that seem to update string's values. It's key to understand that while the value stored in a variable updates upon completion of some of these operations, they don't modify the original string. Instead, they **create a new** String object with its own allocated space in memory.
+
+This provides significant, practical benefits in **security**, **concurrency**, and **performance**.
 
 ### Using String methods
 
