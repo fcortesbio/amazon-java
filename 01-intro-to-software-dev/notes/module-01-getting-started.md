@@ -770,6 +770,7 @@ A **string** is an object that represents a sequence of characters. (Characters 
 Internally, the Java `String` class is backed by an array of the `char` datatype.
 
 Strings are used to store and manipulate text in Java programs. Common use cases include:
+
 - displaying messages
 - taking user inputs
 - processing text data
@@ -783,26 +784,50 @@ String name = "Nathalia";
 ```
 
 #### Strings are Immutable
+
 A core concept in Java is that Strings are **immutable**. This means that once a String **object** is created in memory, its value (the sequence of characters it holds) cannot be changed.
 
 Down the line, we'll explore some methods that seem to update string's values. It's key to understand that while the value stored in a variable updates upon completion of some of these operations, they don't modify the original string. Instead, they **create a new** String object with its own allocated space in memory.
 
 This provides significant, practical benefits in **security**, **concurrency**, and **performance**.
 
-### Using String methods
+### **1.3.2. Using String methods**
 
-### Working with Strings
+#### Common String Methods
 
-### Strings in action
+Java provides many useful methods for manipulating strings. Let's look at some of them.
 
-### Using Arrays of Strings
+**1. `lenght()`**
+This method returns the amount of characters contained in a string.
 
-### Knowledge check: Strings: working with text in Java
+```Java
+public class StringLength {
+    public static void main(String[] args){
 
-### Activity: Getting Started with Java
+        String fruit = "Banana";
 
-### Module summary: Getting Started with Java
+        // This will be 6 because "Banana" has 6 letters.
+        int length = fruit.lenght();
 
-### Module Quiz: Getting started with Java
+        System.out.println("The lenght of the String: " + fruit + " is: " + lenght + " letters");
+    }
+}
+```
 
-### Additional resources: Introduction to software development
+
+
+### **1.3.3. Working with Strings**
+
+### **1.3.4. Strings in action**
+
+### **1.3.5. Using Arrays of Strings**
+
+### **1.3.6. Knowledge check: Strings: working with text in Java**
+
+### **1.3.7. Activity: Getting Started with Java**
+
+### **1.3.8. Module summary: Getting Started with Java**
+
+### **1.3.9. Module Quiz: Getting started with Java**
+
+### **1.3.10. Additional resources: Introduction to software development**
