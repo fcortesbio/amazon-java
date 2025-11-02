@@ -793,26 +793,154 @@ This provides significant, practical benefits in **security**, **concurrency**, 
 
 ### **1.3.2. Using String methods**
 
-#### Common String Methods
+Java provides many built-in methods for working with strings. Understanding these methods is essential for text manipulation in your programs.
 
-Java provides many useful methods for manipulating strings. Let's look at some of them.
+#### Core String Methods
 
-**1. `lenght()`**
-This method returns the amount of characters contained in a string.
+**1. `length()`**
 
-```Java
+Returns the number of characters in a string.
+
+```java
 public class StringLength {
-    public static void main(String[] args){
-
+    public static void main(String[] args) {
         String fruit = "Banana";
-
-        // This will be 6 because "Banana" has 6 letters.
-        int length = fruit.lenght();
-
-        System.out.println("The lenght of the String: " + fruit + " is: " + lenght + " letters");
+        
+        // This will be 6 because "Banana" has 6 letters
+        int length = fruit.length();
+        
+        System.out.println("The length of the string '" + fruit + "' is: " + length + " letters");
     }
 }
 ```
+
+**Output:**
+```
+The length of the string 'Banana' is: 6 letters
+```
+
+---
+
+**2. `charAt(index)`**
+
+Returns the character at a specific position (index). Remember that indexing starts at 0.
+
+```java
+public class StringGetCharAtIndex {
+    public static void main(String[] args) {
+        String fruit = "Banana";
+        
+        // This will be 'a' because 'B' is at index 0 and 'a' at index 1
+        char letter = fruit.charAt(1);
+        
+        System.out.println("The character at index 1 is: " + letter);
+    }
+}
+```
+
+**Output:**
+```
+The character at index 1 is: a
+```
+
+---
+
+**3. `substring(start, end)`**
+
+Extracts a portion of a string between two indexes. The `start` index is inclusive, but the `end` index is exclusive.
+
+```java
+public class StringSubstring {
+    public static void main(String[] args) {
+        String fruit = "Banana";
+        
+        // Extract characters from index 1 to 4 (4 is excluded)
+        String partFrom1to4 = fruit.substring(1, 4);  // "ana"
+        String partFrom4to5 = fruit.substring(4, 5);  // "n"
+        
+        System.out.println("The full string is: " + fruit);
+        System.out.println("Substring from index 1 to 4 (4 excluded): " + partFrom1to4);
+        System.out.println("Substring from index 4 to 5 (5 excluded): " + partFrom4to5);
+    }
+}
+```
+
+**Output:**
+```
+The full string is: Banana
+Substring from index 1 to 4 (4 excluded): ana
+Substring from index 4 to 5 (5 excluded): n
+```
+
+**Important:** Java's `substring()` is strict about boundaries. If you provide an index outside the string's length, you'll get a `StringIndexOutOfBoundsException`.
+
+---
+
+**3a. `substring(start)` - Single Argument Overload**
+
+You can also call `substring()` with just one argument to extract from that index to the end of the string.
+
+```java
+String fruit = "Banana";
+// Get "nana" (from index 2 to the end)
+String toTheEnd = fruit.substring(2);
+System.out.println(toTheEnd);  // Output: nana
+```
+
+---
+
+#### Additional String Techniques
+
+**Getting the Last Character**
+
+Java doesn't support negative indexing (like Python's `[-1]`). To get the last character, calculate its position using the string's length:
+
+```java
+String fruit = "Banana";
+// Get 'a' - the last character
+// We use length() - 1 because "Banana" has length 6, but indices are 0-5
+char lastChar = fruit.charAt(fruit.length() - 1);
+System.out.println(lastChar);  // Output: a
+```
+
+---
+
+**Reversing a String**
+
+Java has no built-in method to reverse a string directly. The standard approach is to use the `StringBuilder` class:
+
+```java
+String fruit = "Banana";
+// Get "anaNaB"
+String reversedFruit = new StringBuilder(fruit)
+                            .reverse()
+                            .toString();
+System.out.println(reversedFruit);  // Output: anaNaB
+```
+
+---
+
+#### String Indexing: Java vs. Python
+
+If you're coming from Python, Java's string handling may feel restrictive. Here's a quick comparison:
+
+| Feature | Python `[start:stop:step]` | Java |
+| :--- | :--- | :--- |
+| **Basic Slice** | `fruit[1:4]` | `fruit.substring(1, 4)` |
+| **Slice to End** | `fruit[2:]` | `fruit.substring(2)` |
+| **Slice from Start** | `fruit[:3]` | `fruit.substring(0, 3)` |
+| **Last Character** | `fruit[-1]` | `fruit.charAt(fruit.length() - 1)` |
+| **Reverse String** | `fruit[::-1]` | `new StringBuilder(fruit).reverse().toString()` |
+| **Out of Bounds** | Returns partial/empty string | Throws `StringIndexOutOfBoundsException` |
+
+**Key Differences:**
+
+1. **Strict vs. Forgiving Boundaries:** Java will throw an exception if you ask for an index outside the string's bounds. Python will gracefully return what it can.
+
+2. **No Negative Indexing:** Java does not support negative indexes. You must use `length() - 1` to access elements from the end.
+
+3. **No Step Parameter:** Python's slice notation allows steps (e.g., `[::2]` for every second character). Java requires a manual loop with `StringBuilder` for this functionality.
+
 
 
 
