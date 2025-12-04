@@ -4,12 +4,10 @@
 
 ## 📚 Modules
 
-- [x] Module 1.1: Introduction to Software Development ✅
-- [x] Module 1.2: Java Basics - Variables and Operators ✅
-- [ ] Module 1.3: Strings - Working with Text in Java (In Progress)
-- [ ] Module 2: Control Flow
-- [ ] Module 3: Object-Oriented Programming Basics
-- [ ] Module 4: Final Project & Assessment
+- [x] Module 1: Getting Started with Java ✅
+- [ ] Module 2: Control flow: Statements and loops
+- [ ] Module 3: Object Oriented programming basics
+- [ ] Module 4: Final project
 
 ## 🎯 Learning Objectives
 
@@ -24,18 +22,18 @@ By the end of this course, I will be able to:
 
 ```
 01-intro-to-software-dev/
-├── module-01-getting-started/
-│   └── module-01-getting-started.md
-├── module-02-variables-and-operators/
+├── module-01-getting-started-with-java/
+│   ├── module-01-getting-started.md
 │   ├── MyFirstProgram.java
 │   ├── FavoriteBook.java
 │   ├── CarInfo.java
 │   ├── NameLength.java
 │   ├── CurrencyConversion.java
-│   └── AssignmentOperators.java
-├── module-03-strings/
+│   ├── AssignmentOperators.java
 │   └── [strings exercises]
-├── module-04-control-flow/ (upcoming)
+├── module-02-control-flow/
+├── module-03-oop-basics/
+├── module-04-final-project/
 └── projects/
     └── virtual-zoo/ (final project)
 ```
@@ -69,9 +67,10 @@ By the end of this course, I will be able to:
 
 ## 🔗 Resources
 
-- [Module 1: Getting Started](./module-01-getting-started/)
-- [Module 2: Variables & Operators](./module-02-variables-and-operators/)
-- [Module 3: Strings](./module-03-strings/)
+- [Module 1: Getting Started with Java](./module-01-getting-started-with-java/)
+- [Module 2: Control flow](./module-02-control-flow/)
+- [Module 3: OOP Basics](./module-03-oop-basics/)
+- [Module 4: Final Project](./module-04-final-project/)
 - [Coursera Course Page](https://www.coursera.org/learn/introduction-to-software-development)
 
 ---
