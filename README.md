@@ -7,7 +7,7 @@
 
 **Overall**: Course 1 of 7 | ~14% Complete  
 **Current**: Module 1.3 - Strings & Arrays  
-**Start Date**: October 2025  
+**Start Date**: October 6, 2025  
 **Target Completion**: February 2026
 
 | # | Course | Duration | Status | Completion |
@@ -26,7 +26,7 @@
 
 - **Languages**: Java, SQL, JavaScript
 - **Concepts**: OOP, Data Structures, Algorithms, Full-Stack Development
-- **Tools**: Git, JUnit, MySQL, RESTful APIs, GenAI tools
+- **Tools**: Git, MySQL, GenAI tools
 - **Frameworks**: (TBD as courses progress)
 
 ## 🏆 Completed Projects
@@ -34,21 +34,75 @@
 - [ ] Virtual Zoo Application (Course 1)
 - [ ] TBD (Course 7 - Capstone)
 
-## 📚 Quick Navigation
-
-- [Course 1 Notes](./01-intro-to-software-dev/notes/)
-- [All Exercises](./01-intro-to-software-dev/exercises/)
-- [Shared Resources](./resources/)
-- [Portfolio Projects](./portfolio/)
-- [Learning Log](./LEARNING_LOG.md)
-
 ## 🛠️ Development Environment
 
-- **Editor**: Neovim with nvim-jdtls
-- **Build Tool**: Gradle
+- **Editor**: Zed Editor
 - **Java Version**: OpenJDK 21
 - **OS**: Arch Linux
 
 ---
 
-*Last updated: October 29, 2025*
+What I currently use for development:
+
+- **Editor**: Zed Editor
+- **Build Tool**: javac 
+- **Java Version**: OpenJDK 21
+- **OS**: Arch Linux
+
+I've also build a custom wrapper to compile and run Java programs and delete class files upon completion.
+
+If you're using linux, you can add this function to your .bashrc or .zshrc file:
+
+```bash
+jrun() {
+  if [ -z "$1" ]; then
+    echo "Usage: jrun file.java [args...]"
+    return 1
+  fi
+  
+  local file="$1"
+  shift 1
+
+  if [[ ! -f "$file" ]]; then
+    echo "Error: File '$file' not found"
+    return 1
+  fi
+
+  local classname="${file%.java}"
+  echo "Classname: $classname"
+
+  # Compile
+  if ! javac "$file"; then
+    echo "Compilation failed"
+    return 1
+  fi
+
+  # Run
+  if ! java "$classname" "$@"; then
+    echo "Execution failed"
+    rm -f "${classname}.class"
+    return 1
+  fi
+
+  # Cleanup
+  rm -f "${classname}.class"
+}
+```
+
+Usage: 
+
+```bash
+jrun file.java [args...] 
+```
+
+This will: 
+- search for the file
+- compile it using javac
+- run it with the provided arguments
+- delete the class file upon completion
+
+This function helps maintain the directory clean by automatically deleting the generated class file after execution.
+
+---
+
+*Last updated: December 6, 2025*
