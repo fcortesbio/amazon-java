@@ -1,7 +1,7 @@
 import json
 import os
 import re
-# from pathlib import pathlib
+from pathlib import pathlib
 
 def create_scaffold(json_path): 
 	# boilerplate	
