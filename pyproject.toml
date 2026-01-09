@@ -8,3 +8,8 @@ dependencies = [
     "playwright>=1.57.0",
     "ruff>=0.14.10",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.10",
+]
