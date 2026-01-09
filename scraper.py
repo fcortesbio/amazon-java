@@ -19,14 +19,14 @@ conf = CertificateConfig(
 async def extract_course_modules(page, course_url, debug=False):
     """Extract module names from a course page."""
     try:
-        print(f"  Visiting course page...")
+        print("  Visiting course page...")
         await page.goto(course_url, wait_until="domcontentloaded", timeout=30000)
         
         # Wait for content to load
         try:
             await page.wait_for_selector('h2, h3', timeout=5000)
         except:
-            print(f"  Warning: Timeout waiting for content")
+            print("  Warning: Timeout waiting for content")
         
         # Try to extract from JSON-LD first
         json_ld_data = await page.evaluate('''
@@ -68,7 +68,7 @@ async def extract_course_modules(page, course_url, debug=False):
         
         # Fallback: scrape from DOM if JSON-LD didn't work
         if not modules:
-            print(f"  JSON-LD failed, trying DOM scraping...")
+            print("  JSON-LD failed, trying DOM scraping...")
             
             # Look for accordion items which contain module information
             accordion_items = await page.query_selector_all('[data-testid="accordion-item"]')
@@ -92,7 +92,7 @@ async def extract_course_modules(page, course_url, debug=False):
             
             # If accordion approach didn't work, try alternative
             if not modules:
-                print(f"  Accordion extraction failed, trying alternative...")
+                print("  Accordion extraction failed, trying alternative...")
                 # Look for h3 elements near "Module N" text
                 module_headers = await page.query_selector_all('h3')
                 for h3 in module_headers:
